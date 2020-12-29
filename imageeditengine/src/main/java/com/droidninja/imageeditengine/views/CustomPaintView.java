@@ -15,6 +15,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.droidninja.imageeditengine.views.cropimage.CropImageView;
+
 /**
  * Created by panyi on 17/2/11.
  */
@@ -106,7 +108,7 @@ public class CustomPaintView extends View {
 
   @Override protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
-    if (mDrawBit != null) {
+    if (mDrawBit != null  && !mDrawBit.isRecycled()) {
       canvas.drawBitmap(mDrawBit, 0, 0, null);
     }
   }
@@ -146,6 +148,7 @@ public class CustomPaintView extends View {
     super.onDetachedFromWindow();
     if (mDrawBit != null && !mDrawBit.isRecycled()) {
       mDrawBit.recycle();
+      mDrawBit= null;
     }
   }
 
@@ -161,6 +164,7 @@ public class CustomPaintView extends View {
   public void reset() {
     if (mDrawBit != null && !mDrawBit.isRecycled()) {
       mDrawBit.recycle();
+      mDrawBit = null;
     }
 
     generatorBit();

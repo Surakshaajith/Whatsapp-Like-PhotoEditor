@@ -1,11 +1,9 @@
 package com.droidninja.imageeditengine;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.util.SparseBooleanArray;
 import android.widget.Toast;
+
 import java.io.File;
 
 public class ImageEditor {
@@ -37,7 +35,7 @@ public class ImageEditor {
     private boolean enabledEditorText = true;
     private boolean enabledEditorPaint = true;
     private boolean enabledEditorSticker = false;
-    private boolean enableEditorCrop = false;
+    private boolean enableEditorCrop = true;
     private boolean enableFilters = true;
 
     public Builder(Activity context, String imagePath) {

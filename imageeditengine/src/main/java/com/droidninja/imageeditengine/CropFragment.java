@@ -4,13 +4,16 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.droidninja.imageeditengine.utils.FragmentUtil;
 import com.droidninja.imageeditengine.views.cropimage.CropImageView;
 
-public class CropFragment extends BaseFragment implements View.OnClickListener{
+public class   CropFragment extends BaseFragment implements View.OnClickListener{
 
   private OnFragmentInteractionListener mListener;
   private CropImageView cropImageView;
@@ -87,6 +90,7 @@ public class CropFragment extends BaseFragment implements View.OnClickListener{
     }
     else if(view.getId()==R.id.done_tv){
       final Bitmap original = getArguments().getParcelable(ImageEditor.EXTRA_ORIGINAL);
+
       mListener.onImageCropped(cropImageView.getCroppedImage(), cropImageView.getCropRect());
     }
     else if(view.getId()==R.id.done_tv){

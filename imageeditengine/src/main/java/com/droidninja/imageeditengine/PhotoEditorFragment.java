@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,13 +19,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.droidninja.imageeditengine.adapters.FilterImageAdapter;
 import com.droidninja.imageeditengine.filter.ApplyFilterTask;
 import com.droidninja.imageeditengine.filter.GetFiltersTask;
-import com.droidninja.imageeditengine.filter.PhotoProcessing;
 import com.droidninja.imageeditengine.filter.ProcessingImage;
 import com.droidninja.imageeditengine.model.ImageFilter;
 import com.droidninja.imageeditengine.utils.FilterHelper;
@@ -38,6 +37,7 @@ import com.droidninja.imageeditengine.views.PhotoEditorView;
 import com.droidninja.imageeditengine.views.VerticalSlideColorPicker;
 import com.droidninja.imageeditengine.views.ViewTouchListener;
 import com.droidninja.imageeditengine.views.imagezoom.ImageViewTouch;
+
 import java.util.ArrayList;
 
 public class PhotoEditorFragment extends BaseFragment
@@ -103,8 +103,6 @@ public class PhotoEditorFragment extends BaseFragment
     super.onDetach();
     mListener = null;
   }
-
-
 
   public interface OnFragmentInteractionListener {
     void onCropClicked(Bitmap bitmap);
@@ -195,7 +193,7 @@ public class PhotoEditorFragment extends BaseFragment
           int ivWidth = mainImageView.getWidth();
           int newHeight = (int) Math.floor(
               (double) currentBitmapHeight * ((double) ivWidth / (double) currentBitmapWidth));
-          originalBitmap = Bitmap.createScaledBitmap(resource, ivWidth, newHeight, true);
+          originalBitmap = Bitmap.createScaledBitmap(resource, ivWidth, newHeight, true); //todo crashes here for second time code push
           mainBitmap = originalBitmap;
           setImageBitmap(mainBitmap);
 
@@ -285,8 +283,10 @@ public class PhotoEditorFragment extends BaseFragment
 
   @Override public void onClick(final View view) {
     int id = view.getId();
-    if (id == R.id.crop_btn) {
-      if(selectedFilter!=null){
+    if (id == R.id.crop_btn)
+    {
+      if(selectedFilter!=null)
+      {
         new ApplyFilterTask(new TaskCallback<Bitmap>() {
           @Override public void onTaskDone(Bitmap data) {
             if(data!=null) {

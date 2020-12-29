@@ -8,11 +8,11 @@ There are many things on which work needs to be done.
  * Convert code to kotlin
  * Publish on maven
  
- ![demo](https://github.com/DroidNinja/Whatsapp-Like-PhotoEditor/blob/master/screens/device-2018-05-31-164109.png?raw=true)
-   ![demo](https://github.com/DroidNinja/Whatsapp-Like-PhotoEditor/blob/master/screens/device-2018-05-31-163754.png?raw=true)
-   ![demo](https://github.com/DroidNinja/Whatsapp-Like-PhotoEditor/blob/master/screens/device-2018-05-31-164258.png?raw=true)
-   ![demo](https://github.com/DroidNinja/Whatsapp-Like-PhotoEditor/blob/master/screens/device-2018-05-31-164411.png?raw=true)
-   ![demo](https://github.com/DroidNinja/Whatsapp-Like-PhotoEditor/blob/master/screens/device-2018-05-31-164501.png?raw=true)
+ ![demo](https://github.com/Surakshaajith/Whatsapp-Like-PhotoEditor/blob/master/screens/image_1.PNG?raw=true)
+   ![demo](https://github.com/Surakshaajith/Whatsapp-Like-PhotoEditor/blob/master/screens/image_2.PNG?raw=true)
+   ![demo](https://github.com/Surakshaajith/Whatsapp-Like-PhotoEditor/blob/master/screens/image_3.PNG?raw=true)
+   ![demo](https://github.com/Surakshaajith/Whatsapp-Like-PhotoEditor/blob/master/screens/image_4.PNG?raw=true)
+   ![demo](https://github.com/Surakshaajith/Whatsapp-Like-PhotoEditor/blob/master/screens/image_5.PNG?raw=true)
 
 # Usage
 ```kotlin
